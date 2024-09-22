@@ -1,0 +1,21 @@
+/* Navbar এবং buttons কে স্থির রাখার জন্য CSS */
+header, .fixed-buttons {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+header {
+    top: 0;
+}
+
+.fixed-buttons {
+    top: 60px; /* Navbar এর নিচে 60 পিক্সেল ব্যবধান */
+    text-align: center;
+    background-color: white; /* ব্যাকগ্রাউন্ড সাদা রাখতে */
+    padding: 10px 0;
+}
+
+main {
+    margin-top: 120px; /* Navbar এবং buttons এর জন্য মার্জিন */
+}

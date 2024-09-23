@@ -6,48 +6,41 @@
     <title>Donation</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/hello.css">
 </head>
 <body>
     <header>
-        <!-- Navbar Section -->
-    <nav class="flex items-center justify-between bg-pink-50 shadow-lg p-4">
-        <!-- Blog Button (Left) -->
-        <div class="flex items-center">
-            <button id="blogBtn" class="bg-green-500 text-white px-4 py-2 rounded-md text-xl">Blog</button>
-        </div> 
-
-        <!-- Logo and Donate Bangladesh (Center) -->
-        <div class="flex items-center space-x-4">
-            <img src="images/logo.png" alt="Logo" class="h-10 w-10"> <!-- Logo -->
-            <span class="text-xl font-bold text-gray-700">Donate</span> <!-- Donate Text -->
-            <span class="text-xl font-semibold text-gray-500">Bangladesh</span> <!-- Bangladesh Text -->
-        </div>
-
-        <!-- Coin Image and 5500 BDT (Right) -->
-        <div class="flex items-center">
-            <img src="images/coin - Copy.png" alt="Coin" class="h-10 w-10">
-            <a id="totalDonation" class="text-slate-600 px-4 py-2 rounded-md text-xl">5500 BDT</a>
-        </div>
-    </nav>
+        <nav class="sticky top-0 w-full z-50 flex items-center justify-between bg-pink-50 shadow-lg p-4">
+            <div class="flex items-center">
+                <button id="blogBtn" class="bg-green-500 text-white px-4 py-2 rounded-md text-xl">Blog</button>
+            </div> 
+            <div class="flex items-center space-x-4">
+                <img src="images/logo.png" alt="Logo" class="h-10 w-10"> 
+                <span class="text-xl font-bold text-gray-700">Donate</span> 
+                <span class="text-xl font-semibold text-gray-500">Bangladesh</span> 
+            </div>
+            <div class="flex items-center">
+                <img src="images/coin - Copy.png" alt="Coin" class="h-10 w-10">
+                <a id="totalDonation" class="text-slate-600 px-4 py-2 rounded-md text-xl">5500 BDT</a>
+            </div>
         </nav>
     </header>
 
-    <div class="fixed-buttons mt-16 flex justify-center">
+    <div class="fixed-buttons mt-16 flex justify-center w-full z-50">
         <button id="donateBtn" class="bg-gray-200 text-black px-4 py-2 rounded-md">Donate</button>
         <button id="historyBtn" class="bg-gray-200 text-slate-600 px-4 py-2 rounded-md ml-3">History</button>
     </div>
 
     <main class="text-center mt-10">
-
-        <!-- modal start -->
         <div id="donationModal" class="fixed hidden inset-0 flex items-center justify-center bg-black bg-opacity-50">
             <div class="bg-white p-5 rounded-lg shadow-lg">
-                <h2 class="text-xl font-bold">Thank you for your donation!</h2>
-                <p id="modalMessage"></p>
-                <button id="modalClose" class="bg-green-500 text-white px-4 py-2 rounded-md mt-4">Close</button>
+                <h2 class="text-xl font-bold">Congrates!</h2>
+                <img class="justify-center" src="images/coin - Copy.png" alt="">
+                <p id="modalMessage" class="text-slate-600">You Have Donated for Humankind</p>
+                <h4 class="text-xl font-bold">Successfully</h4>
+                <button id="modalClose" class="bg-green-500 text-white px-4 py-2 rounded-md mt-4">Close Confirmation</button>
             </div>
         </div>
-        <!-- modal end -->
 
         <div id="donateCard1" class="hidden items-center justify-center h-screen flex mt-36">
             <div class="bg-white shadow-xl flex max-w-4xl mx-auto rounded-lg">
@@ -97,18 +90,12 @@
             </div>
         </div>
 
-        <!-- History Section -->
         <div id="historySection" class="hidden mt-10">
             <h2 class="text-2xl font-bold">Donation History</h2>
             <div id="historyList" class="mt-4"></div>
         </div>
-
     </main>
 
     <script src="js/hello.js"></script>
 </body>
 </html>
-
-
-
-

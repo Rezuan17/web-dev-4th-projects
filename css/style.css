@@ -1,21 +1,36 @@
-/* Navbar এবং buttons কে স্থির রাখার জন্য CSS */
-header, .fixed-buttons {
+/* Navbar */
+nav {
     position: fixed;
-    width: 100%;
-    z-index: 10;
-}
-
-header {
     top: 0;
-}
+    left: 0;
+    width: 100%;
+    z-index: 1000; }
 
+/* Fixed Buttons */
 .fixed-buttons {
-    top: 60px; /* Navbar এর নিচে 60 পিক্সেল ব্যবধান */
-    text-align: center;
-    background-color: white; /* ব্যাকগ্রাউন্ড সাদা রাখতে */
-    padding: 10px 0;
+    position: fixed;
+    top: 70px; 
+    left: 0;
+    width: 100%;
+    z-index: 999; 
+    display: flex;
+    justify-content: center;
+    background-color: white; 
 }
 
+/* Main Content */
 main {
-    margin-top: 120px; /* Navbar এবং buttons এর জন্য মার্জিন */
+    margin-top: 140px;
+    position: relative;
+    z-index: 1; 
+}
+
+/* Images */
+img {
+    position: relative;
+    z-index: 1;
+}
+
+#donationModal {
+    z-index: 1000; /* Ensure the modal is above other elements */
 }

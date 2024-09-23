@@ -45,58 +45,75 @@ document.getElementById('historyBtn').addEventListener('click', function() {
         this.classList.add('bg-green-500');
     }
 
+    // Hide donation cards
     document.getElementById('donateCard1').classList.add('hidden');
     document.getElementById('donateCard2').classList.add('hidden');
     document.getElementById('donateCard3').classList.add('hidden');
+
+    // Show history section
     historySection.classList.remove('hidden');
 });
 
-// Function to add donation to history
-function addToHistory(donationAmount, location) {
+// Donation button click for each card
+document.getElementById('donateClick1').addEventListener('click', function() {
+    const amount = parseFloat(document.getElementById('inputDonate1').value);
+    if (isNaN(amount) || amount <= 0) {
+        alert('Please enter a valid positive amount.');
+        return;
+    }
+
+    updateTotalDonation(amount);
+    openModal(amount);
+
+    // Record donation in history
+    recordDonation('Flood Relief in Noakhali', amount);
+});
+
+document.getElementById('donateClick2').addEventListener('click', function() {
+    const amount = parseFloat(document.getElementById('inputDonate2').value);
+    if (isNaN(amount) || amount <= 0) {
+        alert('Please enter a valid positive amount.');
+        return;
+    }
+
+    updateTotalDonation(amount);
+    openModal(amount);
+
+    // Record donation in history
+    recordDonation('Flood Relief in Feni', amount);
+});
+
+document.getElementById('donateClick3').addEventListener('click', function() {
+    const amount = parseFloat(document.getElementById('inputDonate3').value);
+    if (isNaN(amount) || amount <= 0) {
+        alert('Please enter a valid positive amount.');
+        return;
+    }
+
+    updateTotalDonation(amount);
+    openModal(amount);
+
+    // Record donation in history
+    recordDonation('Aid for Injured in Quota Movement', amount);
+});
+
+// Function to record donations in history
+function recordDonation(location, amount) {
     const historyList = document.getElementById('historyList');
-    const date = new Date().toLocaleString();
+    const date = new Date().toLocaleDateString();
     const historyItem = document.createElement('div');
-    historyItem.className = 'border p-2 mb-2';
-    historyItem.innerHTML = `<strong>${donationAmount} BDT</strong> donated for <strong>${location}</strong> on ${date}`;
+    historyItem.classList.add('border', 'p-2', 'm-1', 'rounded-md');
+    historyItem.innerText = `Amount: ${amount} BDT, Location: ${location}, Date: ${date}`;
     historyList.appendChild(historyItem);
 }
 
-// Donation logic for each card
-function setupDonationCard(cardId, inputId, moneyId, clickId, location) {
-    document.getElementById(clickId).addEventListener('click', function() {
-        const donationAmount = parseFloat(document.getElementById(inputId).value);
-        if (isNaN(donationAmount) || donationAmount <= 0) {
-            alert('Please enter a valid donation amount!');
-            return;
-        }
-        
-        // Update total donation
-        updateTotalDonation(donationAmount);
-        
-        // Update card money display
-        const currentMoney = parseFloat(document.getElementById(moneyId).innerText) || 0;
-        document.getElementById(moneyId).innerText = currentMoney + donationAmount + ' BDT';
-
-        // Add to history
-        addToHistory(donationAmount, location);
-
-        // Open modal
-        openModal(donationAmount);
-        
-        // Clear input
-        document.getElementById(inputId).value = '';
-    });
-}
-
-// Set up donation cards
-setupDonationCard('donateCard1', 'inputDonate1', 'money1', 'donateClick1', 'Flood at Noakhali');
-setupDonationCard('donateCard2', 'inputDonate2', 'money2', 'donateClick2', 'Flood Relief in Feni');
-setupDonationCard('donateCard3', 'inputDonate3', 'money3', 'donateClick3', 'Aid for Injured in the Quota Movement');
-
-// Blog button click
+// Blog button e click event listener
 document.getElementById('blogBtn').addEventListener('click', function() {
+    // Redirect to the home page
     window.location.href = '/home.html'; 
 });
+
+
 
 
 

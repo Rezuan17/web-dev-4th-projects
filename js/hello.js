@@ -93,8 +93,7 @@ setupDonationCard('donateCard1', 'inputDonate1', 'money1', 'donateClick1', 'Floo
 setupDonationCard('donateCard2', 'inputDonate2', 'money2', 'donateClick2', 'Flood Relief in Feni');
 setupDonationCard('donateCard3', 'inputDonate3', 'money3', 'donateClick3', 'Aid for Injured in the Quota Movement');
 
-
-
-
-
-
+// Blog button click
+document.getElementById('blogBtn').addEventListener('click', function() {
+    window.location.href = '/home.html'; 
+});

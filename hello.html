@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,17 +30,16 @@
     </div>
 
     <main class="text-center mt-10">
-    <!-- modal start -->
 
-    <div id="donationModal" class="fixed hidden inset-0 flex items-center justify-center bg-black bg-opacity-50">
-        <div class="bg-white p-5 rounded-lg shadow-lg">
-            <h2 class="text-xl font-bold">Thank you for your donation!</h2>
-            <p id="modalMessage"></p>
-            <button id="modalClose" class="bg-green-500 text-white px-4 py-2 rounded-md mt-4">Close</button>
+        <!-- modal start -->
+        <div id="donationModal" class="fixed hidden inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <div class="bg-white p-5 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold">Thank you for your donation!</h2>
+                <p id="modalMessage"></p>
+                <button id="modalClose" class="bg-green-500 text-white px-4 py-2 rounded-md mt-4">Close</button>
+            </div>
         </div>
-    </div>
-
-<!-- modal end -->
+        <!-- modal end -->
 
         <div id="donateCard1" class="hidden items-center justify-center h-screen flex mt-36">
             <div class="bg-white shadow-xl flex max-w-4xl mx-auto rounded-lg">
@@ -87,6 +88,13 @@
                 </div>
             </div>
         </div>
+
+        <!-- History Section -->
+        <div id="historySection" class="hidden mt-10">
+            <h2 class="text-2xl font-bold">Donation History</h2>
+            <div id="historyList" class="mt-4"></div>
+        </div>
+
     </main>
 
     <script src="js/hello.js"></script>

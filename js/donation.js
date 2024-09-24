@@ -1,10 +1,10 @@
-let totalDonation = 5500; // Initial total donation
-document.getElementById('totalDonation').innerText = totalDonation + ' BDT';
+let totalDonation = 10500; // Initial total donation
+document.getElementById('totalDonationDisplay').innerText = totalDonation + ' BDT';
 
 // Function to update the total donation display
 function updateTotalDonation(amount) {
     totalDonation -= amount;
-    document.getElementById('totalDonation').innerText = totalDonation + ' BDT';
+    document.getElementById('totalDonationDisplay').innerText = totalDonation + ' BDT';
 }
 
 // Function to open modal
@@ -54,7 +54,7 @@ document.getElementById('historyBtn').addEventListener('click', function() {
     historySection.classList.remove('hidden');
 });
 
-// Donation button click for each card
+// Donation 1 button click for each card
 document.getElementById('donateClick1').addEventListener('click', function() {
     const amount = parseFloat(document.getElementById('inputDonate1').value);
     if (isNaN(amount) || amount <= 0) {
@@ -62,11 +62,20 @@ document.getElementById('donateClick1').addEventListener('click', function() {
         return;
     }
 
+    // Update card's donation amount
+    const currentAmount1 = parseFloat(document.getElementById('money1').innerText.split(' ')[0]) || 0;
+    document.getElementById('money1').innerText = (currentAmount1 + amount) + ' BDT';
+    
     updateTotalDonation(amount);
     openModal(amount);
 
     // Record donation in history
     recordDonation('Flood Relief in Noakhali', amount);
+
+
+ // Clear the input field
+ document.getElementById('inputDonate1').value = '';
+
 });
 
 document.getElementById('donateClick2').addEventListener('click', function() {
@@ -76,11 +85,20 @@ document.getElementById('donateClick2').addEventListener('click', function() {
         return;
     }
 
+     // Update card's donation amount
+     const currentAmount2 = parseFloat(document.getElementById('money2').innerText.split(' ')[0]) || 0;
+     document.getElementById('money2').innerText = (currentAmount2 + amount) + ' BDT';
+
     updateTotalDonation(amount);
     openModal(amount);
 
     // Record donation in history
     recordDonation('Flood Relief in Feni', amount);
+
+
+ // Clear the input field
+ document.getElementById('inputDonate2').value = '';
+
 });
 
 document.getElementById('donateClick3').addEventListener('click', function() {
@@ -90,11 +108,20 @@ document.getElementById('donateClick3').addEventListener('click', function() {
         return;
     }
 
+    // Update card's donation amount
+    const currentAmount3 = parseFloat(document.getElementById('money3').innerText.split(' ')[0]) || 0;
+    document.getElementById('money3').innerText = (currentAmount3 + amount) + ' BDT';
+
     updateTotalDonation(amount);
     openModal(amount);
 
     // Record donation in history
     recordDonation('Aid for Injured in Quota Movement', amount);
+
+
+ // Clear the input field
+ document.getElementById('inputDonate3').value = '';
+
 });
 
 // Function to record donations in history

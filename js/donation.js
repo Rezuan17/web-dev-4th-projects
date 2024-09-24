@@ -107,11 +107,12 @@ function recordDonation(location, amount) {
     historyList.appendChild(historyItem);
 }
 
-// Blog button e click event listener
 document.getElementById('blogBtn').addEventListener('click', function() {
-    // Redirect to the home page
-    window.location.href = '/home.html'; 
+    window.location.href = 'home.html';
 });
+
+
+
 
 
 

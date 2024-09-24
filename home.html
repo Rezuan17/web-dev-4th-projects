@@ -4,32 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Some question</h1>
-    <div>
-        <ul>
-            <li><h3>question: What is DOM ?</h3></li>
-            <li>Ans: DOM stands for Document Object Model. It represents the structure of a web page.</li>
-        </ul>
-    </div>
+    <header>
+        <nav>
+            <div class="flex items-center">
+                <button id="blogBtnClick" class="bg-gray-200 text-black px-4 py-2 rounded-md text-xl">Home</button>
+            </div>
+        </nav>
+    </header>
 
-    <div>
-        <ul>
-            <li><h3>question: How to manipulate DOM?</h3></li>
-            <li>Ans: You can manipulate DOM using JavaScript with methods like `getElementById`, `appendChild`, etc.</li>
-        </ul>
-    </div>
+    <!-- main section -->
+    <main>
+        <h1>Some question</h1>
+        <div>
+            <ul>
+                <li><h3>question: What is DOM?</h3></li>
+                <li>Ans: DOM stands for Document Object Model. It represents the structure of a web page.</li>
+            </ul>
+        </div>
 
-    <div>
-        <ul>
-            <li><h3>question: What is the role of DOM in JavaScript ?
-            </h3></li>
-            <li>Ans: DOM allows JavaScript to dynamically modify HTML and CSS.</li>
-        </ul>
-    </div>
+        <div>
+            <ul>
+                <li><h3>question: How to manipulate DOM?</h3></li>
+                <li>Ans: You can manipulate DOM using JavaScript with methods like `getElementById`, `appendChild`, etc.</li>
+            </ul>
+        </div>
 
+        <div>
+            <ul>
+                <li><h3>question: What is the role of DOM in JavaScript?</h3></li>
+                <li>Ans: DOM allows JavaScript to dynamically modify HTML and CSS.</li>
+            </ul>
+        </div>
+    </main>
 
-
+    <script src="js/home.js"></script>
 </body>
 </html>

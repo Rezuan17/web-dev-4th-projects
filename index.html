@@ -4,54 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/hello.css">
 </head>
-<body>
+<body class="lexend-normal">
+   
     <header>
-        <nav class="sticky top-0 w-full z-50 flex items-center justify-between bg-pink-50 shadow-lg p-4">
+        <nav class="fixed top-0 left-0 w-full z-50 flex items-center justify-between bg-pink-50 shadow-lg p-4 backdrop-blur-md">
             <div class="flex items-center">
                 <button id="blogBtn" class="bg-green-500 text-white px-4 py-2 rounded-md text-xl">Blog</button>
-            </div> 
+            </div>
             <div class="flex items-center space-x-4">
-                <img src="images/logo.png" alt="Logo" class="h-10 w-10"> 
-                <span class="text-xl font-bold text-gray-700">Donate</span> 
-                <span class="text-xl font-semibold text-gray-500">Bangladesh</span> 
+                <img src="images/logo.png" alt="Logo" class="h-10 w-10">
+                <span class="text-xl font-bold text-gray-700">Donate</span>
+                <span class="text-xl font-semibold text-gray-500">Bangladesh</span>
             </div>
             <div class="flex items-center">
                 <img src="images/coin - Copy.png" alt="Coin" class="h-10 w-10">
-                <a id="totalDonation" class="text-slate-600 px-4 py-2 rounded-md text-xl">5500 BDT</a>
+                <a id="totalDonation" class="text-slate-600 px-4 py-2 rounded-md text-xl">10500 BDT</a>
             </div>
         </nav>
     </header>
+    
 
-    <div class="fixed-buttons mt-16 flex justify-center w-full z-50">
-        <button id="donateBtn" class="bg-gray-200 text-black px-4 py-2 rounded-md">Donate</button>
-        <button id="historyBtn" class="bg-gray-200 text-slate-600 px-4 py-2 rounded-md ml-3">History</button>
-    </div>
+<!-- Donate and History buttons -->
+<div class="fixed top-16 left-0 w-full z-40 flex justify-center bg-white shadow-md p-4 backdrop-blur-md mt-3">
+    <button id="donateBtn" class="bg-gray-200 text-black px-4 py-2 rounded-md">Donate</button>
+    <button id="historyBtn" class="bg-gray-200 text-slate-600 px-4 py-2 rounded-md ml-3">History</button>
+</div>
+
+<!-- Content Section -->
+<div class="mt-32">
+    <!-- Your main content goes here -->
+    <!-- <p>Your website content here...</p> -->
+</div>
+    
 
     <main class="text-center mt-10">
+      
+      <!-- modal start -->
+
         <div id="donationModal" class="fixed hidden inset-0 flex items-center justify-center bg-black bg-opacity-50">
             <div class="bg-white p-5 rounded-lg shadow-lg">
-                <h2 class="text-xl font-bold">Congrates!</h2>
-                <img class="justify-center" src="images/coin - Copy.png" alt="">
-                <p id="modalMessage" class="text-slate-600">You Have Donated for Humankind</p>
-                <h4 class="text-xl font-bold">Successfully</h4>
-                <button id="modalClose" class="bg-green-500 text-white px-4 py-2 rounded-md mt-4">Close Confirmation</button>
+                <h2 class="text-xl font-bold text-center">Congrates!</h2>
+                <img class="mx-auto" src="images/coin - Copy.png" alt="">
+                <p id="modalMessage" class="text-slate-600 text-center">You Have Donated for Humankind</p>
+                <h4 class="text-xl font-bold text-center">Successfully</h4>
+                <button id="modalClose" class="bg-green-500 text-white px-4 py-2 rounded-md mt-4 mx-auto block">Close Confirmation</button>
             </div>
         </div>
+        
+
+        <!-- modal end -->
 
         <div id="donateCard1" class="hidden items-center justify-center h-screen flex mt-36">
-            <div class="bg-white shadow-xl flex max-w-4xl mx-auto rounded-lg">
-                <img src="images/noakhali.png" alt="Flood Rescue Team" class="rounded-l-lg w-1/2 h-full object-cover">
-                <div class="w-1/2 p-5 flex flex-col justify-between">
-                    <div class="flex justify-end">
-                        <div id="image1" class="mr-2"><img src="images/coin.png" alt=""></div>
-                        <div id="money1">0 BDT</div>
+            <div class="bg-white shadow-2xl flex max-w-4xl mx-auto rounded-lg gap-24">
+                <img src="images/noakhali.png" alt="Flood Rescue Team" class="rounded-l-lg w-96 h-full object-cover mt-20 p-5">
+                <div class="w-1/2 p-5 flex flex-col justify-between mb-5">
+                   <button id="btn-1" class="bg-slate-300 ">
+                    <div class="flex justify-end justify-center align-middle">
+                        <div id="image1" class="mr-2"><img src="images/coin - Copy.png" alt=""></div>
+                        <div id="money1" class="mr-80">0 BDT</div>
                     </div>
-                    <h2 class="card-title text-2xl font-bold">Donate for Flood at Noakhali, Bangladesh</h2>
-                    <p class="text-gray-600">Your donation will help provide essential supplies...</p>
+                   </button>
+                    <h2 class="card-title text-2xl font-bold">Donate for Flood at Noakhali, Bangladesh</h2><br>
+                    <p class="text-gray-600">our donation for flood relief in Noakhali, Bangladesh, is vital. It will provide essential supplies and support to those in need. Your generosity can restore hope and help rebuild lives in the community. Every contribution counts! </p><br>
                     <input id="inputDonate1" type="text" placeholder="Write Donation Amount" class="input input-bordered w-full mb-4">
                     <button id="donateClick1" class="btn bg-green-400 text-white w-full">Donate Now</button>
                 </div>
@@ -89,8 +112,8 @@
                 </div>
             </div>
         </div>
-
-        <div id="historySection" class="hidden mt-32">
+        <!-- history section -->
+        <div id="historySection" class="hidden mt-40">
             <h2 class="text-2xl font-bold">Donation History</h2>
             <div id="historyList" class="mt-4"></div>
         </div>
